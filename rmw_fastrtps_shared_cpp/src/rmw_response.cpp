@@ -145,10 +145,10 @@ __rmw_send_response(
     client_present_t ret = listener->check_for_subscription(related_guid);
     if (ret == client_present_t::GONE) {
       return RMW_RET_OK;
-    } else if (ret == client_present_t::MAYBE) {
+    } /*else if (ret == client_present_t::MAYBE) {
       RMW_SET_ERROR_MSG("client will not receive response");
       return RMW_RET_TIMEOUT;
-    }
+    }*/
   }
 
   rmw_fastrtps_shared_cpp::SerializedData data;

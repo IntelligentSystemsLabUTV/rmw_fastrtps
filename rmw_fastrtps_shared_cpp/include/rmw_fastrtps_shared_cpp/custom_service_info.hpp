@@ -148,10 +148,15 @@ public:
       }
     }
     // Wait for subscription
-    if (!wait_for_subscription(guid, std::chrono::milliseconds(100))) {
-      return client_present_t::MAYBE;
+    for (int i = 0; i < 6; ++i) {
+      if (wait_for_subscription(guid, std::chrono::milliseconds(500))) {
+        return client_present_t::YES;
+      }
+      std::cerr <<
+        "rmw_fastrtps_shared_cpp::check_for_subscription: Service client not matched yet, retrying..."
+                << std::endl;
     }
-    return client_present_t::YES;
+    return client_present_t::MAYBE;
   }
 
   void endpoint_erase_if_exists(

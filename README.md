@@ -2,6 +2,9 @@
 
 `rmw_fastrtps` is a [ROS 2](https://docs.ros.org/en/rolling) middleware implementation, providing an interface between ROS 2 and [eProsima's](https://www.eprosima.com/index.php) [Fast DDS](https://github.com/eProsima/Fast-DDS) middleware.
 
+
+**This is a fork of [`ros2/rmw_fastrtps`](https://github.com/ros2/rmw_fastrtps), for internal use only.**
+
 ## Getting started
 This implementation is available in all ROS 2 distributions, both from binaries and from sources.
 You can specify Fast DDS as your ROS 2 middleware layer in two different ways:

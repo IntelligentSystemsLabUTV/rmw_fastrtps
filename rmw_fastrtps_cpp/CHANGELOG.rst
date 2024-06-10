@@ -2,6 +2,23 @@
 Changelog for package rmw_fastrtps_cpp
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+6.2.6 (2024-01-24)
+------------------
+* Capture `std::bad_alloc` on deserializeROSmessage. (`#665 <https://github.com/ros2/rmw_fastrtps/issues/665>`_) (`#737 <https://github.com/ros2/rmw_fastrtps/issues/737>`_)
+* Contributors: mergify[bot]
+
+6.2.5 (2023-11-13)
+------------------
+
+6.2.4 (2023-09-19)
+------------------
+* Fix incoherent dissociate_writer to dissociate_reader (`#647 <https://github.com/ros2/rmw_fastrtps/issues/647>`_) (`#649 <https://github.com/ros2/rmw_fastrtps/issues/649>`_) (`#651 <https://github.com/ros2/rmw_fastrtps/issues/651>`_)
+* update fast-dds version into 2.6.2. (`#702 <https://github.com/ros2/rmw_fastrtps/issues/702>`_)
+* Contributors: Tomoya Fujita, mergify[bot]
+
+6.2.3 (2023-07-18)
+------------------
+
 6.2.2 (2022-11-07)
 ------------------
 * Use Fast-DDS Waitsets instead of listeners (backport `#619 <https://github.com/ros2/rmw_fastrtps/issues/619>`_) (`#633 <https://github.com/ros2/rmw_fastrtps/issues/633>`_)

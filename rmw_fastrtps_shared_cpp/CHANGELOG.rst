@@ -2,6 +2,24 @@
 Changelog for package rmw_fastrtps_shared_cpp
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+6.2.6 (2024-01-24)
+------------------
+
+6.2.5 (2023-11-13)
+------------------
+
+6.2.4 (2023-09-19)
+------------------
+* Delay lock on message callback setters (`#657 <https://github.com/ros2/rmw_fastrtps/issues/657>`_) (`#661 <https://github.com/ros2/rmw_fastrtps/issues/661>`_)
+* Fix incoherent dissociate_writer to dissociate_reader (`#647 <https://github.com/ros2/rmw_fastrtps/issues/647>`_) (`#649 <https://github.com/ros2/rmw_fastrtps/issues/649>`_) (`#651 <https://github.com/ros2/rmw_fastrtps/issues/651>`_)
+* Call callbacks only if unread count > 0 (`#634 <https://github.com/ros2/rmw_fastrtps/issues/634>`_) (`#638 <https://github.com/ros2/rmw_fastrtps/issues/638>`_)
+* Use DataWriter Qos to configure max_blocking_time on rmw_send_response (`#704 <https://github.com/ros2/rmw_fastrtps/issues/704>`_) (`#707 <https://github.com/ros2/rmw_fastrtps/issues/707>`_)
+* update fast-dds version into 2.6.2. (`#702 <https://github.com/ros2/rmw_fastrtps/issues/702>`_)
+* Contributors: Tomoya Fujita, mergify[bot]
+
+6.2.3 (2023-07-18)
+------------------
+
 6.2.2 (2022-11-07)
 ------------------
 * Use Fast-DDS Waitsets instead of listeners (backport `#619 <https://github.com/ros2/rmw_fastrtps/issues/619>`_) (`#633 <https://github.com/ros2/rmw_fastrtps/issues/633>`_)

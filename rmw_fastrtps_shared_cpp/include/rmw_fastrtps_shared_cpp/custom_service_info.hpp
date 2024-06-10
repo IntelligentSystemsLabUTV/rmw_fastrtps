@@ -135,10 +135,13 @@ public:
     return cv_.wait_for(lock, rel_time, guid_is_present);
   }
 
+  template<class Rep, class Period>
   client_present_t
   check_for_subscription(
-    const eprosima::fastrtps::rtps::GUID_t & guid)
+    const eprosima::fastrtps::rtps::GUID_t & guid,
+    const std::chrono::duration<Rep, Period> & max_blocking_time)
   {
+    (void)(max_blocking_time);
     {
       std::lock_guard<std::mutex> lock(mutex_);
       // Check if the guid is still in the map
@@ -231,10 +234,10 @@ public:
     const void * user_data,
     rmw_event_callback_t callback)
   {
-    std::unique_lock<std::mutex> lock_mutex(on_new_request_m_);
-
     if (callback) {
       auto unread_requests = get_unread_resquests();
+
+      std::lock_guard<std::mutex> lock_mutex(on_new_request_m_);
 
       if (0 < unread_requests) {
         callback(user_data, unread_requests);
@@ -247,6 +250,8 @@ public:
       status_mask |= eprosima::fastdds::dds::StatusMask::data_available();
       info_->request_reader_->set_listener(this, status_mask);
     } else {
+      std::lock_guard<std::mutex> lock_mutex(on_new_request_m_);
+
       eprosima::fastdds::dds::StatusMask status_mask = info_->request_reader_->get_status_mask();
       status_mask &= ~eprosima::fastdds::dds::StatusMask::data_available();
       info_->request_reader_->set_listener(this, status_mask);
